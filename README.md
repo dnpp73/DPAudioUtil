@@ -14,7 +14,7 @@ DPAudioUtil
 
 # Description
 
-AVAudioSession Util
+iOS 6-9 Compatible AVAudioSession Util Wrapper
 
 # Usage
 
