@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name                  = 'DPAudioUtil'
   s.version               = '1.0.0'
-  s.summary               = 'AVAudioSession Util'
+  s.summary               = 'iOS 6-9 Compatible AVAudioSession Util Wrapper'
   s.author                = { 'Yusuke SUGAMIYA' => 'yusuke.dnpp@gmail.com' }
   s.homepage              = 'https://github.com/dnpp73/DPAudioUtil'
   s.source                = { :git => 'https://github.com/dnpp73/DPAudioUtil.git', :tag => "#{s.version}" }
