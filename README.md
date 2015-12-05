@@ -5,9 +5,10 @@ DPAudioUtil
 [![Pod Version](http://img.shields.io/cocoapods/v/DPAudioUtil.svg?style=flat-square)](http://cocoadocs.org/docsets/DPAudioUtil/)
 [![Pod Platform](http://img.shields.io/cocoapods/p/DPAudioUtil.svg?style=flat-square)](http://cocoadocs.org/docsets/DPAudioUtil/)
 [![Pod License](http://img.shields.io/cocoapods/l/DPAudioUtil.svg?style=flat-square)](http://opensource.org/licenses/MIT)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat-square)](https://github.com/Carthage/Carthage)
 
 ### Dependency
-* [`dp_exec_block_on_main_thread`](https://github.com/dnpp73/dp_exec_block_on_main_thread)
+* None
 
 ### Require Framework
 * `AVFoundation.framework`

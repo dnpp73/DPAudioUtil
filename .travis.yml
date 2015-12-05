@@ -1,16 +1,16 @@
 language: objective-c
-
-osx_image: xcode7
+osx_image: xcode7.1
+xcode_project: DPAudioUtil.xcodeproj
 
 cache:
   directories:
     - $HOME/.cocoapods
 
 before_install:
-  - gem install cocoapods --no-ri --no-rdoc
-
-before_script:
-  - pod setup > /dev/null 2>&1
+  - gem install cocoapods xcpretty --no-ri --no-rdoc
+  - set -o pipefail
+  - xcodebuild clean -project DPAudioUtil.xcodeproj -scheme DPAudioUtil -sdk iphonesimulator | xcpretty -c
 
 script:
-  - pod lib lint --sources='https://github.com/CocoaPods/Specs'
+  - pod lib lint
+  - xcodebuild -project DPAudioUtil.xcodeproj -scheme DPAudioUtil -sdk iphonesimulator | xcpretty -c

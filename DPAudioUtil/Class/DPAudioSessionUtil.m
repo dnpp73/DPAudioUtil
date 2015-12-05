@@ -4,9 +4,6 @@
 #if TARGET_OS_IPHONE
 
 
-#import "dp_exec_block_on_main_thread.h"
-
-
 @implementation DPAudioSessionUtil
 
 + (void)requestRecordPermissionWithCallback:(void (^)(BOOL))callback
@@ -14,18 +11,26 @@
     // iOS 7.0 未満
     if (NSFoundationVersionNumber < NSFoundationVersionNumber_iOS_7_0) {
         if (callback) {
-            dp_exec_block_on_main_thread(^{
+            if ([NSThread isMainThread]) {
                 callback(YES);
-            });
+            } else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    callback(YES);
+                });
+            }
         }
     }
     // iOS 7.0 以降
     else if (NSFoundationVersionNumber_iOS_7_0 <= NSFoundationVersionNumber) {
         [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted){
             if (callback) {
-                dp_exec_block_on_main_thread(^{
+                if ([NSThread isMainThread]) {
                     callback(granted);
-                });
+                } else {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        callback(granted);
+                    });
+                }
             }
         }];
     }

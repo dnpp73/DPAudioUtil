@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = 'DPAudioUtil'
-  s.version               = '1.0.1'
+  s.version               = '1.1'
   s.summary               = 'iOS 6-9 Compatible AVAudioSession Util Wrapper'
   s.author                = { 'Yusuke SUGAMIYA' => 'yusuke.dnpp@gmail.com' }
   s.homepage              = 'https://github.com/dnpp73/DPAudioUtil'
@@ -10,9 +10,7 @@ Pod::Spec.new do |s|
   s.requires_arc          = true
   
   s.ios.frameworks        = 'AVFoundation'
-  
-  s.dependency 'dp_exec_block_on_main_thread'
-  
+    
   s.license = {
    :type => 'MIT',
    :text => <<-LICENSE
